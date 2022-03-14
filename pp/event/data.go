@@ -16,7 +16,7 @@ func reqActivateData(amount, fee, gas int64) (*protos.ReqActivatePP, error) {
 		return nil, err
 	}
 
-	txMsg := stratoschain.BuildCreateResourceNodeMsg(setting.GetNetworkID().String(), setting.Config.Token, setting.P2PAddress, "", setting.P2PPublicKey, amount, ownerAddress)
+	txMsg := stratoschain.BuildCreateResourceNodeMsg(setting.GetNetworkID().String(), setting.Config.Token, setting.P2PAddress, 0, setting.P2PPublicKey, amount, ownerAddress)
 	signatureKeys := []stratoschain.SignatureKey{
 		{Address: setting.WalletAddress, PrivateKey: setting.WalletPrivateKey, Type: stratoschain.SignatureSecp256k1},
 	}
